@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Todo App</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <h1>Todo App</h1>
+        <p>Kelola tugas harian kamu dengan mudah</p>
+      </div>
+
+      <button id="darkModeBtn" type="button">
+        Dark Mode
+      </button>
+    </header>
+
+    <form id="taskForm">
+      <input 
+        type="text" 
+        id="title" 
+        placeholder="Judul tugas" 
+        required 
+      />
+
+      <input 
+        type="text" 
+        id="description" 
+        placeholder="Deskripsi tugas" 
+      />
+
+      <select id="priority" required>
+        <option value="Low">Low - 42 Jam</option>
+        <option value="Medium" selected>Medium - 24 Jam</option>
+        <option value="High">High - 2 Jam</option>
+      </select>
+
+      <input 
+        type="number" 
+        id="duration" 
+        placeholder="Waktu pengerjaan dalam jam" 
+        required 
+      />
+
+      <button type="submit">
+        Tambah Task
+      </button>
+    </form>
+
+    <div class="filters">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Cari tugas..." 
+      />
+
+      <select id="statusFilter">
+        <option value="all">Semua Status</option>
+        <option value="pending">Pending</option>
+        <option value="done">Done</option>
+      </select>
+
+      <select id="priorityFilter">
+        <option value="all">Semua Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <div class="summary">
+      <p>Total Task: <span id="totalTasks">0</span></p>
+      <p>Remaining: <span id="remainingTasks">0</span></p>
+      <p>Done: <span id="doneTasks">0</span></p>
+    </div>
+
+    <section class="task-section">
+      <h2>Daftar Tugas</h2>
+      <div id="taskList"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
